@@ -1,0 +1,29 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+ /* .nav-bar{
+   color: white; 
+   background: rgb(2,0,36); 
+   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,41,9,1) 35%, rgba(0,212,255,1) 100%); 
+ } */
+ .main-body{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,234,253,1) 100%);
+ }
+ .icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+      font-size: inherit;
+  }
+  .bg-logo{
+    background-image: url('./templates/psychology.png');
+    background-size: cover; 
+    height: 300px;
+  
+  }
+

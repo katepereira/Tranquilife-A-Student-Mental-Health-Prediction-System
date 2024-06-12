@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Mental Health Prediction</title>
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="nav-bar" role="navigation">
+    <div class="nav-wrapper container">
+        <img src="{{ url_for('static', filename='images/image.png') }}" style="width: 50px;height: 50px; max-width: 100%;">
+        <a id="logo-container" href="mental_health.html" class="brand-logo">TRANQUILIFE</a>
+    </div>
+  </nav>
+
+  <div class="main-body" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Mental Health Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict the probability of seeking mental and emotional help for those in dire need.
+        <br>
+        </h5>
+      </div>
+
+  <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="first_name"><b>Gender</b></label>
+            <br>
+            
+           <input id="last_name" name="Gender" placeholder="Eg:0 for Male, 1 for Female"  type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name"><b>Age </b></label>
+            <br>
+          <input id="last_name" name="Age" placeholder="Age in years"  type="text" class="validate">
+
+        </div>
+
+        
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>What is your CGPA? </b></label>
+              <br>
+            <input id="last_name" name="CGPA" placeholder="Eg: 7.85"  type="text" class="validate">
+  
+        </div>
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>Marital Status </b></label>
+              <br>
+            <input id="last_name" name="Marital" placeholder="Eg:0 for No, 1 for Yes"  type="text" class="validate">
+  
+        </div>
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>Do you have Depression? </b></label>
+              <br>
+            <input id="last_name" name="Depression" placeholder="Eg: 0 for No, 1 for Yes"  type="text" class="validate">
+  
+        </div>
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>Do you have Anxiety? </b></label>
+              <br>
+            <input id="last_name" name="Anxiety" placeholder="Eg: 0 for No, 1 for Yes"  type="text" class="validate">
+  
+        </div>
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>Do you have Panic Attacks? </b></label>
+              <br>
+            <input id="last_name" name="Panic" placeholder="Eg: 0 for No, 1 for Yes"  type="text" class="validate">
+  
+        </div>
+        <div class="input-field col s4">
+
+            <label for="last_name"><b>Do you seek any Treatment? </b></label>
+              <br>
+            <input id="last_name" name="Treatment" placeholder="Eg: 0 for No, 1 for Yes"  type="text" class="validate">
+  
+        </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+      <div style="text-align: center;">
+        {{pred}}<br>
+      </div>
+        
+        <h3 style="text-align: center;">Mental Health Resources</h3>
+        <ul style="text-align: center;">
+            {% for resource in resources %}
+                <li>{{ resource.name }}{% if resource.phone %}: {{ resource.phone }}{% endif %} <a href="{{ resource.website }}" target="_blank" >Helpline</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      
+        <h4 style="text-align: center;">If you ever feel the need for professional guidance or resources, don't hesitate to reach out.</h4>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container" style="text-align: center;">
+        Designed with care by Kate Pereira &copy; 2023
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+ 
